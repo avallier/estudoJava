@@ -1,30 +1,34 @@
 package br.com.avallier.visao;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionListener;
 
 import br.com.avallier.modelo.Usuario;
+import br.com.avallier.modelo.Usuarios;
 
 @ManagedBean
-public class UsuarioBean {
+@SessionScoped
+public class UsuarioBean extends Usuario{
 
-	Usuario usuario;
+	private Usuario usuario;
+	private Usuarios usuarios;
 	
 	public UsuarioBean()	{
-		setUsuarios(null);
+		usuario=new Usuario("Inicialização","cpf inválido");
+		usuarios=new Usuarios();
 	}
 
 	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
 
+	public Usuarios getUsuarios() {
+		return usuarios;
+	}
 	
+	public String cadastrar()	{
+		usuarios.cadastrar(getUsuario());
+		return "Usuário Cadastrado";
+	}
 }

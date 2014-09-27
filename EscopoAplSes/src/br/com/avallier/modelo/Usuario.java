@@ -1,14 +1,21 @@
 package br.com.avallier.modelo;
 
-import java.io.Serializable;
-
-public class Usuario implements Serializable {
-	private static final long serialVersionUID = -7622455859723534219L;
+public class Usuario {
 	
 	private String id;
 	private String senha;
 	private String nome;
 	private Cpf cpf;
+	
+	public Usuario()	{
+		cpf=new Cpf("Inválido");
+	}
+	
+	public Usuario(String sNome, String sCpf) {
+		this();
+		setNome(sNome);
+		setCpf(new Cpf(sCpf));
+	}
 	
 	public String getId() {
 		return id;

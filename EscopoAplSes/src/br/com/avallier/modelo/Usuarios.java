@@ -9,33 +9,42 @@ import java.util.Map;
 public class Usuarios {
 
 	Map<String,Usuario> colecao;
+	
+	public Usuarios()	{
+		setColecao(null);
+	}
 
 	/**
 	 * @return Retorna a lista de usuários
 	 */
-	public Collection<Usuario> getUsuarios() {
-		return colecao.values();
+	public Collection<Usuario> getColecao() {
+		Collection<Usuario> x=colecao.values();
+		System.out.println("Entrei aqui");
+		//return colecao.values();
+		return x;
 	}
 	
-	/**
-	 * Adiciona um usuário a coleção de usuários  
-	 * @param usuario
-	 */
-	public void registra(Usuario usuario)	{
-		if (usuario!=null)	{
-			if (colecao.containsKey(usuario.getId()))	{
-				
-			}
-		}
-	}
-
-	public void setUsuarios(List<Usuario> lstUsuario) {
+	public void setColecao(List<Usuario> lstUsuario) {
 		colecao = new HashMap<String,Usuario>();
 		if (lstUsuario!=null)	{
 			Iterator<Usuario> itUsu=lstUsuario.iterator();
 			while (itUsu.hasNext())	{
-				Usuario usu = itUsu.next();
-				colecao.put(usu.getId(), usu);
+				cadastrar(itUsu.next());
+			}
+		}
+	}
+
+	/**
+	 * Adiciona um usuário a coleção de usuários  
+	 * @param usuario
+	 */
+	public void cadastrar(Usuario usuario)	{
+		if (usuario!=null)	{
+			if (colecao.containsKey(usuario.getId()))	{
+				
+			}
+			else	{
+				colecao.put(usuario.getId(), usuario);
 			}
 		}
 	}

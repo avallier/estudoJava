@@ -22,13 +22,22 @@
 
 <h:body>
 	<h:form>
-		<h:h3>Cadastramento de usuários</h:h3>
+		<h2>Cadastramento de usuários</h2>
 		
 		<h:panelGroup>
 		</h:panelGroup>
 		
 		<h:panelGroup>
 		</h:panelGroup>
+		<h:commandButton value="Enviar" action="#{usuarioBean.cadastrar}"/>
+		
+		Qtd. de usuários: #{usuarioBean.usuariosd.colecaox.size}
+		<ol>
+			<ui:repeat var="itUsu" value="#{usuariosBean.usuarios.colecao}">
+				<li>#{itUsu.nome}</li>
+			</ui:repeat>
+		</ol>
+		
 	</h:form>
 </h:body>
 </html>

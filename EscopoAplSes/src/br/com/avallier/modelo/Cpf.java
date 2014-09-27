@@ -4,6 +4,15 @@ public class Cpf {
 	
 	String numero;
 
+	public Cpf()	{
+		setNumero("Inicialização");
+	}
+	
+	public Cpf(String sNumero) {
+		this();
+		setNumero(sNumero);
+	}
+
 	public String getNumero() {
 		return numero;
 	}
