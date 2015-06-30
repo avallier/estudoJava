@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
 		<project.commons.version>1.1-SNAPSHOT</project.commons.version>
 		<project.commons-web.version>1.1-SNAPSHOT</project.commons-web.version>
-		<project.portal.version>1.3.4-SNAPSHOT</project.portal.version>
+		<project.portal.version>1.3.6-SNAPSHOT</project.portal.version>
 		<maven.plugins.version>2.3.2</maven.plugins.version>
 	</properties>
 
